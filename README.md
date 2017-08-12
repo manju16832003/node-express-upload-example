@@ -6,6 +6,8 @@ git clone git clone https://manju16832003@bitbucket.org/wootagtest/woo-tag-video
 
 `cd woo-tag-video-upload-service`
 
+`npm install`
+
 `node index.js`
 
 Go to http://localhost:3001
