@@ -10,6 +10,10 @@ git clone git clone https://manju16832003@bitbucket.org/wootagtest/woo-tag-video
 
 `node index.js`
 
+## Run Tests
+
+`node test`
+
 Go to http://localhost:3001
 
 or keep an eye on console logs for any errors.
