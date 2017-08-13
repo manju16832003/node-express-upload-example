@@ -4,21 +4,21 @@ var cmd = require('node-cmd');
 var mkdirp = require('mkdirp')
 
 exports.save = function (req, res) {
-  const video = req.files[ 0 ]
+  const video = req.files[0]
 
   // check file
   // write file
   async.waterfall([
-    function (cb) {
+    function (callback) {
       fs.readFile(video.path, (error, result) => {
         if (error) {
           console.log('ReadError:', error)
         } else {
-          cb(null, result)
+          return callback(null, result)
         }
       })
     },
-    function (result, cb) {
+    function (result, callback) {
       const videoStoragePath = __dirname + '/videos/'
       // create directory if does not exists
       mkdirp(videoStoragePath, function (error) {
@@ -29,12 +29,12 @@ exports.save = function (req, res) {
           if (error) {
             console.log('WriteError:', error)
           } else {
-            cb(null, 'success')
+            return callback(null, 'success')
           }
         })
       })
     }
   ])
 
-  console.log('COMPLETED!')
+  res.send('success')
 }
