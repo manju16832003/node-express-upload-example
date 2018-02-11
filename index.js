@@ -17,7 +17,7 @@ app.use(function(req, res, next) {
 
 var router = express.Router();
 router.get('/', function (req, res) {
-  res.send('Woo Tag Video Upload API')
+  res.send('Upload File API')
 })
 
 // manage video upload
